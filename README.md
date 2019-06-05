@@ -38,5 +38,5 @@ Trong dự án gồm 5 service chính:
 
 
 Mô hình tổng thể của dự án
-
+![Cinema Diagram ](https://raw.githubusercontent.com/congvu307/Cinema/master/Cinema_Diagram.png)
 
