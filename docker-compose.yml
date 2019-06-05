@@ -1,0 +1,64 @@
+version: "2"
+services:
+  # gateway_service:
+  #   container_name: gateway_service
+  #   restart: always
+  #   build: ./Z_Gateway
+  #   ports:
+  #   - "8000:8000"
+  #   depends_on:
+  #   - mongodb
+
+  booking_service:
+    container_name: booking_service
+    restart: always
+    build: ./Booking
+    ports:
+    - "3001:3000"
+    depends_on:
+    - mongodb
+  
+  notification_service:
+    container_name: notification_service
+    restart: always
+    build: ./Notifications
+    ports:
+    - "3002:3000"
+    depends_on:
+    - mongodb
+  
+  catalogs_service:
+    container_name: catalogs_service
+    restart: always
+    build: ./Catalogs
+    ports:
+    - "3003:3000"
+    depends_on:
+    - mongodb
+  
+  movie_service:
+    container_name: movie_service
+    restart: always
+    build: ./Movies
+    ports:
+    - "3004:3000"
+    depends_on:
+    - mongodb
+  
+  mongodb:
+    container_name: mongo_db
+    image: mongo
+    ports:
+    - "27017:27017"
+  
+  nginx:
+    build: ./Z_Gateway
+    ports:
+      - "80:80"
+    container_name: gateway_service
+    restart: always
+    depends_on:
+      - booking_service
+      - movie_service
+      - catalogs_service
+      - notification_service

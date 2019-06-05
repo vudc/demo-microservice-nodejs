@@ -1,0 +1,19 @@
+{
+  "name": "z_gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.5.1",
+    "http-proxy-middleware": "^0.19.1",
+    "https-proxy-agent": "^2.2.1",
+    "nodemon": "^1.19.1"
+  }
+}
